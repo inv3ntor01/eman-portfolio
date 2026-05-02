@@ -16,11 +16,12 @@ export default defineConfig({
             "Access-Control-Allow-Origin": "*",
         },
         https: {
+            //use /usr/src/app if the internet is available
             key: fs.readFileSync('/usr/src/app/.infrastructure/conf/traefik/dev/certificates/local-dev-key.pem'),
             cert: fs.readFileSync('/usr/src/app/.infrastructure/conf/traefik/dev/certificates/local-dev.pem'),
         },
     },
-    
+
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
